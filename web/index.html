@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kaggriculture Arena</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>🌾 Kaggriculture Arena</h1>
+    <div class="controls">
+      <label>Your agent
+        <select id="agent"></select>
+      </label>
+      <label class="upload-label">upload .py
+        <input type="file" id="upload" accept=".py">
+      </label>
+      <span class="vs">vs</span>
+      <label>Opponent
+        <select id="opponent"></select>
+      </label>
+      <label>Seed <input id="seed" type="number" value="0" min="0"></label>
+      <label>Steps <input id="steps" type="number" value="720" min="24" step="24"></label>
+      <label class="speed">Speed
+        <input id="speed" type="range" min="1" max="240" value="24">
+        <span id="speedLabel">24/s</span>
+      </label>
+      <label class="turbo"><input type="checkbox" id="turbo"> max</label>
+      <button id="run">▶ Run</button>
+      <button id="stopBtn" disabled>■ Stop</button>
+      <a id="replayLink" href="/api/replay" download title="download replay JSON">⬇ replay</a>
+    </div>
+  </header>
+
+  <div id="statusbar">idle — pick agents and press Run</div>
+
+  <main>
+    <section class="player-panel" id="panel0"></section>
+    <aside id="side">
+      <div id="market"></div>
+      <div id="town"></div>
+    </aside>
+    <section class="player-panel" id="panel1"></section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
